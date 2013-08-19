@@ -32,11 +32,11 @@ public class SHA3Util {
         return encode(digest, bouncyencoder);
     }
     
-    public static String encode(byte [] bites, boolean bouncyencoder) {
+    public static String encode(byte [] bytes, boolean bouncyencoder) {
         if (bouncyencoder)
-            return Hex.toHexString(bites);
+            return Hex.toHexString(bytes);
         else {
-            BigInteger bigInt = new BigInteger(1, bites);
+            BigInteger bigInt = new BigInteger(1, bytes);
             return bigInt.toString(16);
         }
     }
